@@ -6,7 +6,7 @@
   <style>
     * {
       box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
     }
 
     body {
@@ -57,6 +57,40 @@
       font-size: 26px;
       font-weight: bold;
       margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .btn-add {
+      background-color: #3b82f6;
+      color: white;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .btn-add:hover {
+      background-color: #2563eb;
+    }
+
+    .filters {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .filters input,
+    .filters select {
+      padding: 10px 14px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      width: 250px;
+      font-size: 14px;
     }
 
     .table-container {
@@ -83,8 +117,24 @@
       color: #475569;
     }
 
-    tr:hover {
-      background-color: #f8fafc;
+    .actions button {
+      background-color: #e2e8f0;
+      border: none;
+      padding: 6px 12px;
+      margin: 0 4px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .actions button.edit {
+      background-color: #facc15;
+      color: #78350f;
+    }
+
+    .actions button.delete {
+      background-color: #f87171;
+      color: white;
     }
 
     .status {
@@ -104,13 +154,6 @@
       background-color: #fee2e2;
       color: #b91c1c;
     }
-
-    .footer {
-      margin-top: 40px;
-      text-align: center;
-      color: #64748b;
-      font-size: 14px;
-    }
   </style>
 </head>
 <body>
@@ -128,8 +171,23 @@
   </div>
 
   <div class="main">
-    <div class="header">Gestión de Usuarios</div>
+    <div class="header">
+      Gestión de Usuarios
+      <button class="btn-add">+ Agregar Usuario</button>
+    </div>
 
+    <!-- Filtros -->
+    <div class="filters">
+      <input type="text" placeholder="Buscar por nombre...">
+      <select>
+        <option value="">Filtrar por rol</option>
+        <option>Estudiante</option>
+        <option>Profesor</option>
+        <option>Administrador</option>
+      </select>
+    </div>
+
+    <!-- Tabla -->
     <div class="table-container">
       <table>
         <thead>
@@ -138,32 +196,43 @@
             <th>Correo</th>
             <th>Rol</th>
             <th>Estado</th>
+            <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>Juan Pérez</td>
-            <td>juanperez@lapredelvalle.edu</td>
+            <td>juan@lapre.edu</td>
             <td>Estudiante</td>
             <td><span class="status active">Activo</span></td>
+            <td class="actions">
+              <button class="edit">Editar</button>
+              <button class="delete">Eliminar</button>
+            </td>
           </tr>
           <tr>
             <td>María Torres</td>
-            <td>mtorres@lapredelvalle.edu</td>
+            <td>maria@lapre.edu</td>
             <td>Profesor</td>
-            <td><span class="status active">Activo</span></td>
+            <td><span class="status inactive">Inactivo</span></td>
+            <td class="actions">
+              <button class="edit">Editar</button>
+              <button class="delete">Eliminar</button>
+            </td>
           </tr>
           <tr>
-            <td>Luis Gómez</td>
-            <td>lgomez@lapredelvalle.edu</td>
+            <td>Luis Romero</td>
+            <td>luis@lapre.edu</td>
             <td>Administrador</td>
-            <td><span class="status inactive">Inactivo</span></td>
+            <td><span class="status active">Activo</span></td>
+            <td class="actions">
+              <button class="edit">Editar</button>
+              <button class="delete">Eliminar</button>
+            </td>
           </tr>
         </tbody>
       </table>
     </div>
-
-    <div class="footer">© 2025 La Pre del Valle. Todos los derechos reservados.</div>
   </div>
 
 </body>

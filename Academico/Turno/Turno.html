@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Turnos Académicos - La Pre del Valle</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background-color: #f9fafb;
+      color: #1e293b;
+    }
+
+    .sidebar {
+      width: 260px;
+      height: 100vh;
+      background-color: #1e293b;
+      color: white;
+      position: fixed;
+      padding: 20px;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      font-size: 22px;
+      margin-bottom: 30px;
+      color: #38bdf8;
+    }
+
+    .menu a {
+      display: block;
+      padding: 12px 20px;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      margin: 5px 0;
+      transition: background 0.2s;
+    }
+
+    .menu a:hover,
+    .menu a.active {
+      background-color: #334155;
+    }
+
+    .main {
+      margin-left: 270px;
+      padding: 40px;
+    }
+
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .filters input,
+    .filters select {
+      padding: 10px 14px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    
+    .header {
+      font-size: 26px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .btn-add {
+      background-color: #22c55e;
+      color: white;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .btn-add:hover {
+      background-color: #16a34a;
+    }
+
+    .table-container {
+      background-color: white;
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 14px;
+      text-align: left;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    th {
+      background-color: #f1f5f9;
+      font-weight: 600;
+      color: #475569;
+    }
+
+    .actions button {
+      background-color: #e2e8f0;
+      border: none;
+      padding: 6px 12px;
+      margin: 0 4px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .actions button.view {
+      background-color: #38bdf8;
+      color: white;
+    }
+
+    .badge {
+      padding: 6px 10px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    .presencial {
+      background-color: #dbeafe;
+      color: #1e40af;
+    }
+
+    .virtual {
+      background-color: #fef3c7;
+      color: #92400e;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>📘 La Pre del Valle</h2>
+    <nav class="menu">
+      <a href="#">🏠 Dashboard</a>
+      <a href="#">👥 Usuarios</a>
+      <a href="#" class="active">📚 Académico</a>
+      <a href="#">📝 Matrículas</a>
+      <a href="#">⚙️ Cuenta</a>
+      <a href="#">🚪 Cerrar sesión</a>
+    </nav>
+  </div>
+
+  <div class="main">
+    <div class="header">
+      Turnos Académicos
+      <button class="btn-add">+ Agregar Turno</button>
+    </div>
+
+
+     <!-- Filtros -->
+     <div class="filters">
+        <input type="text" placeholder="Buscar por nombre...">
+        <select>
+          <option value="">Modalidad</option>
+          <option>Presencial</option>
+          <option>Virtual</option>
+        </select>
+        <select>
+          <option value="">Semestre</option>
+          <option>2025-I</option>
+          <option>2025-II</option>
+          <option>2026-I</option>
+        </select>
+      </div>
+
+    <!-- Tabla de Turnos -->
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Modalidad</th>
+            <th>Semestre</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Mañana</td>
+            <td><span class="badge presencial">Presencial</span></td>
+            <td>2025-I</td>
+            <td class="actions">
+              <button class="view">Ver Cursos</button>
+              <button class="edit">Editar</button>
+              <button class="delete">Eliminar</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Tarde</td>
+            <td><span class="badge virtual">Virtual</span></td>
+            <td>2025-I</td>
+            <td class="actions">
+              <button class="view">Ver Cursos</button>
+              <button class="edit">Editar</button>
+              <button class="delete">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</body>
+</html>
