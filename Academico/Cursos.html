@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Turnos Académicos - La Pre del Valle</title>
+  <title>Cursos - La Pre del Valle</title>
   <style>
     * {
       box-sizing: border-box;
@@ -51,22 +51,6 @@
       padding: 40px;
     }
 
-
-    .filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    .filters input,
-    .filters select {
-      padding: 10px 14px;
-      border: 1px solid #cbd5e1;
-      border-radius: 8px;
-      font-size: 14px;
-    }
-    
     .header {
       font-size: 26px;
       font-weight: bold;
@@ -128,24 +112,6 @@
       background-color: #38bdf8;
       color: white;
     }
-
-    .badge {
-      padding: 6px 10px;
-      border-radius: 12px;
-      font-size: 13px;
-      font-weight: bold;
-      display: inline-block;
-    }
-
-    .presencial {
-      background-color: #dbeafe;
-      color: #1e40af;
-    }
-
-    .virtual {
-      background-color: #fef3c7;
-      color: #92400e;
-    }
   </style>
 </head>
 <body>
@@ -155,7 +121,8 @@
     <nav class="menu">
       <a href="#">🏠 Dashboard</a>
       <a href="#">👥 Usuarios</a>
-      <a href="#" class="active">📚 Académico</a>
+      <a href="#">📚 Académico</a>
+      <a href="#" class="active">📖 Cursos</a>
       <a href="#">📝 Matrículas</a>
       <a href="#">⚙️ Cuenta</a>
       <a href="#">🚪 Cerrar sesión</a>
@@ -164,59 +131,38 @@
 
   <div class="main">
     <div class="header">
-      Turnos Académicos
-      <button class="btn-add">+ Agregar Turno</button>
+      Lista de Cursos
+      <button class="btn-add">+ Agregar Curso</button>
     </div>
 
-
-     <!-- Filtros -->
-     <div class="filters">
-        <input type="text" placeholder="Buscar por nombre...">
-        <select>
-          <option value="">Modalidad</option>
-          <option>Presencial</option>
-          <option>Virtual</option>
-        </select>
-        <select>
-          <option value="">Semestre</option>
-          <option>2025-I</option>
-          <option>2025-II</option>
-          <option>2026-I</option>
-        </select>
-      </div>
-
-    <!-- Tabla de Turnos -->
+    <!-- Tabla de Cursos -->
     <div class="table-container">
       <table>
         <thead>
           <tr>
-            <th>Nombre</th>
-            <th>Modalidad</th>
-            <th>Semestre</th>
+            <th>Nombre del Curso</th>
+            <th>Descripción</th>
             <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Mañana</td>
-            <td><span class="badge presencial">Presencial</span></td>
-            <td>2025-I</td>
+            <td>Matemática</td>
+            <td>Curso de razonamiento matemático para nivel preuniversitario.</td>
             <td class="actions">
-              <button class="view">Ver Horario</button>
               <button class="edit">Editar</button>
               <button class="delete">Eliminar</button>
             </td>
           </tr>
           <tr>
-            <td>Tarde</td>
-            <td><span class="badge virtual">Virtual</span></td>
-            <td>2025-I</td>
+            <td>Comunicación</td>
+            <td>Curso centrado en comprensión lectora y redacción.</td>
             <td class="actions">
-              <button class="view">Ver Horario</button>
               <button class="edit">Editar</button>
               <button class="delete">Eliminar</button>
             </td>
           </tr>
+          <!-- Puedes insertar más cursos dinámicamente aquí -->
         </tbody>
       </table>
     </div>

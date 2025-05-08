@@ -110,20 +110,13 @@
       padding: 14px;
       text-align: center;
       border-bottom: 1px solid #e2e8f0;
+      vertical-align: top;
     }
 
     th {
       background-color: #f1f5f9;
       font-weight: 600;
       color: #475569;
-    }
-
-    td input {
-      width: 100%;
-      padding: 8px;
-      border: 1px solid #e2e8f0;
-      border-radius: 6px;
-      text-align: center;
     }
 
     .delete-btn {
@@ -140,6 +133,20 @@
 
     .actions-col {
       width: 60px;
+    }
+
+    .course-professor-input {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .course-professor-input input {
+      padding: 6px;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      text-align: center;
+      font-size: 13px;
     }
   </style>
 </head>
@@ -189,24 +196,24 @@
         <tbody>
           <tr>
             <td>8:00 - 10:00</td>
-            <td><input type="text" placeholder="Curso" /></td>
-            <td><input type="text" placeholder="Curso" /></td>
-            <td><input type="text" placeholder="Curso" /></td>
-            <td><input type="text" placeholder="Curso" /></td>
-            <td><input type="text" placeholder="Curso" /></td>
-            <td><input type="text" placeholder="Curso" /></td>
-            <td><input type="text" placeholder="Curso" /></td>
+            <td><div class="course-professor-input"><input type="text" placeholder="Curso" /><input type="text" placeholder="Profesor" /></div></td>
+            <td><div class="course-professor-input"><input type="text" placeholder="Curso" /><input type="text" placeholder="Profesor" /></div></td>
+            <td><div class="course-professor-input"><input type="text" placeholder="Curso" /><input type="text" placeholder="Profesor" /></div></td>
+            <td><div class="course-professor-input"><input type="text" placeholder="Curso" /><input type="text" placeholder="Profesor" /></div></td>
+            <td><div class="course-professor-input"><input type="text" placeholder="Curso" /><input type="text" placeholder="Profesor" /></div></td>
+            <td><div class="course-professor-input"><input type="text" placeholder="Curso" /><input type="text" placeholder="Profesor" /></div></td>
+            <td><div class="course-professor-input"><input type="text" placeholder="Curso" /><input type="text" placeholder="Profesor" /></div></td>
             <td><button class="delete-btn">🗑️</button></td>
           </tr>
           <tr>
             <td>10:30 - 12:30</td>
-            <td><input type="text" placeholder="Curso" /></td>
-            <td><input type="text" placeholder="Curso" /></td>
-            <td><input type="text" placeholder="Curso" /></td>
-            <td><input type="text" placeholder="Curso" /></td>
-            <td><input type="text" placeholder="Curso" /></td>
-            <td><input type="text" placeholder="Curso" /></td>
-            <td><input type="text" placeholder="Curso" /></td>
+            <td><div class="course-professor-input"><input type="text" placeholder="Curso" /><input type="text" placeholder="Profesor" /></div></td>
+            <td><div class="course-professor-input"><input type="text" placeholder="Curso" /><input type="text" placeholder="Profesor" /></div></td>
+            <td><div class="course-professor-input"><input type="text" placeholder="Curso" /><input type="text" placeholder="Profesor" /></div></td>
+            <td><div class="course-professor-input"><input type="text" placeholder="Curso" /><input type="text" placeholder="Profesor" /></div></td>
+            <td><div class="course-professor-input"><input type="text" placeholder="Curso" /><input type="text" placeholder="Profesor" /></div></td>
+            <td><div class="course-professor-input"><input type="text" placeholder="Curso" /><input type="text" placeholder="Profesor" /></div></td>
+            <td><div class="course-professor-input"><input type="text" placeholder="Curso" /><input type="text" placeholder="Profesor" /></div></td>
             <td><button class="delete-btn">🗑️</button></td>
           </tr>
           <tr>
