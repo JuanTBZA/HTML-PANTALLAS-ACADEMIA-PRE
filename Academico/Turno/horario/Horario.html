@@ -89,6 +89,19 @@
       flex-wrap: wrap;
     }
 
+    .section-title {
+      font-size: 18px;
+      margin: 20px 0 10px;
+      color: #0f172a;
+    }
+
+    .course-list.profesores .course-item {
+      background-color: #fef9c3;
+      color: #ca8a04;
+      border: 1px solid #fde68a;
+    }
+
+
     .course-item {
       background-color: #e0f2fe;
       color: #0284c7;
@@ -168,13 +181,21 @@
     <div class="header">Horario Académico</div>
 
     <!-- Lista de cursos -->
+    <h3 class="section-title">Cursos disponibles</h3>
     <div class="course-list">
-      <div class="course-item" draggable="true">Matemática</div>
       <div class="course-item" draggable="true">Física</div>
       <div class="course-item" draggable="true">Química</div>
       <div class="course-item" draggable="true">Comunicación</div>
       <div class="course-item" draggable="true">Raz. Matemático</div>
       <div class="course-item" draggable="true">Raz. Verbal</div>
+    </div>
+
+    <h3 class="section-title">Profesores disponibles</h3>
+    <div class="course-list professe-list">
+      <div class="course-item" draggable="true">Josue Esquen</div>
+      <div class="course-item" draggable="true">Felix Angulo</div>
+      <div class="course-item" draggable="true">Abraham Jimenez</div>
+      <div class="course-item" draggable="true">Juan Tirado</div>
     </div>
 
     <!-- Tabla de horarios -->
