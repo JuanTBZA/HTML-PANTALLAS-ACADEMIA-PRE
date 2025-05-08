@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Configuración de Horarios - La Pre del Valle</title>
+  <title>Horario Académico - La Pre del Valle</title>
   <style>
     * {
       box-sizing: border-box;
@@ -57,24 +57,59 @@
       margin-bottom: 20px;
     }
 
+    .btn-save,
+    .btn-add-row {
+      background-color: #22c55e;
+      color: white;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-top: 20px;
+    }
+
+    .btn-save:hover,
+    .btn-add-row:hover {
+      background-color: #16a34a;
+    }
+
     .table-container {
       background-color: white;
       padding: 24px;
       border-radius: 16px;
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-      margin-bottom: 40px;
+      overflow-x: auto;
+    }
+
+    .course-list {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .course-item {
+      background-color: #e0f2fe;
+      color: #0284c7;
+      padding: 8px 14px;
+      border-radius: 8px;
+      cursor: grab;
+      font-weight: 500;
+      border: 1px solid #bae6fd;
+      user-select: none;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
+      min-width: 900px;
     }
 
     th, td {
       padding: 14px;
       text-align: center;
-      border: 1px solid #e2e8f0;
-      font-size: 14px;
+      border-bottom: 1px solid #e2e8f0;
     }
 
     th {
@@ -83,23 +118,28 @@
       color: #475569;
     }
 
-    .course-pill {
-      display: inline-block;
-      padding: 8px 12px;
-      margin: 6px;
-      border-radius: 12px;
-      background-color: #dbeafe;
-      color: #1e40af;
-      font-weight: 600;
-      cursor: grab;
+    td input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      text-align: center;
     }
 
-    .droppable {
-      min-height: 40px;
+    .delete-btn {
+      cursor: pointer;
+      color: #ef4444;
+      font-size: 16px;
+      border: none;
+      background: transparent;
     }
 
-    .droppable.hovered {
-      background-color: #f0f9ff;
+    .delete-btn:hover {
+      color: #b91c1c;
+    }
+
+    .actions-col {
+      width: 60px;
     }
   </style>
 </head>
@@ -118,105 +158,67 @@
   </div>
 
   <div class="main">
-    <div class="header">Configuración de Horarios</div>
+    <div class="header">Horario Académico</div>
 
-    <!-- Cursos disponibles -->
-    <div class="table-container">
-      <h3>Cursos disponibles</h3>
-      <div id="courses">
-        <span class="course-pill" draggable="true">Matemática</span>
-        <span class="course-pill" draggable="true">Física</span>
-        <span class="course-pill" draggable="true">Comunicación</span>
-        <span class="course-pill" draggable="true">Química</span>
-        <span class="course-pill" draggable="true">Historia</span>
-      </div>
+    <!-- Lista de cursos -->
+    <div class="course-list">
+      <div class="course-item" draggable="true">Matemática</div>
+      <div class="course-item" draggable="true">Física</div>
+      <div class="course-item" draggable="true">Química</div>
+      <div class="course-item" draggable="true">Comunicación</div>
+      <div class="course-item" draggable="true">Raz. Matemático</div>
+      <div class="course-item" draggable="true">Raz. Verbal</div>
     </div>
 
-    <!-- Horario -->
+    <!-- Tabla de horarios -->
     <div class="table-container">
-      <h3>Horario Semanal</h3>
       <table>
         <thead>
           <tr>
-            <th>HORA</th>
-            <th>LUNES</th>
-            <th>MARTES</th>
-            <th>MIÉRCOLES</th>
-            <th>JUEVES</th>
-            <th>VIERNES</th>
-            <th>SÁBADO</th>
-            <th>DOMINGO</th>
+            <th>Hora</th>
+            <th>Lunes</th>
+            <th>Martes</th>
+            <th>Miércoles</th>
+            <th>Jueves</th>
+            <th>Viernes</th>
+            <th>Sábado</th>
+            <th>Domingo</th>
+            <th class="actions-col">Acción</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>8:00 - 10:00</td>
-            <td class="droppable"></td>
-            <td class="droppable"></td>
-            <td class="droppable"></td>
-            <td class="droppable"></td>
-            <td class="droppable"></td>
-            <td class="droppable"></td>
-            <td class="droppable"></td>
+            <td><input type="text" placeholder="Curso" /></td>
+            <td><input type="text" placeholder="Curso" /></td>
+            <td><input type="text" placeholder="Curso" /></td>
+            <td><input type="text" placeholder="Curso" /></td>
+            <td><input type="text" placeholder="Curso" /></td>
+            <td><input type="text" placeholder="Curso" /></td>
+            <td><input type="text" placeholder="Curso" /></td>
+            <td><button class="delete-btn">🗑️</button></td>
           </tr>
           <tr>
             <td>10:30 - 12:30</td>
-            <td class="droppable"></td>
-            <td class="droppable"></td>
-            <td class="droppable"></td>
-            <td class="droppable"></td>
-            <td class="droppable"></td>
-            <td class="droppable"></td>
-            <td class="droppable"></td>
+            <td><input type="text" placeholder="Curso" /></td>
+            <td><input type="text" placeholder="Curso" /></td>
+            <td><input type="text" placeholder="Curso" /></td>
+            <td><input type="text" placeholder="Curso" /></td>
+            <td><input type="text" placeholder="Curso" /></td>
+            <td><input type="text" placeholder="Curso" /></td>
+            <td><input type="text" placeholder="Curso" /></td>
+            <td><button class="delete-btn">🗑️</button></td>
           </tr>
           <tr>
-            <td>(+)</td>
-            <td colspan="7">Agregar más filas </td>
+            <td colspan="8" style="text-align: right; font-weight: bold;">➕ Agregar fila</td>
+            <td></td>
           </tr>
         </tbody>
       </table>
-      <button id="saveBtn" style="
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #3b82f6;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-">Guardar</button>
 
+      <button class="btn-save">Guardar Horarios</button>
     </div>
   </div>
-
-  <script>
-    const draggables = document.querySelectorAll('.course-pill');
-    const droppables = document.querySelectorAll('.droppable');
-
-    draggables.forEach(item => {
-      item.addEventListener('dragstart', (e) => {
-        e.dataTransfer.setData('text/plain', e.target.innerText);
-      });
-    });
-
-    droppables.forEach(cell => {
-      cell.addEventListener('dragover', (e) => {
-        e.preventDefault();
-        cell.classList.add('hovered');
-      });
-
-      cell.addEventListener('dragleave', () => {
-        cell.classList.remove('hovered');
-      });
-
-      cell.addEventListener('drop', (e) => {
-        e.preventDefault();
-        const data = e.dataTransfer.getData('text/plain');
-        cell.innerHTML = `<span class="course-pill" draggable="true">${data}</span>`;
-        cell.classList.remove('hovered');
-      });
-    });
-  </script>
 
 </body>
 </html>
