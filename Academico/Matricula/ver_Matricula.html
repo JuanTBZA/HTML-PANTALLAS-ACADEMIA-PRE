@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ver Matrícula - La Pre del Valle</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background-color: #f9fafb;
+      color: #1e293b;
+    }
+
+    .sidebar {
+      width: 260px;
+      height: 100vh;
+      background-color: #1e293b;
+      color: white;
+      position: fixed;
+      padding: 20px;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      font-size: 22px;
+      margin-bottom: 30px;
+      color: #38bdf8;
+    }
+
+    .menu a {
+      display: block;
+      padding: 12px 20px;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      margin: 5px 0;
+      transition: background 0.2s;
+    }
+
+    .menu a:hover,
+    .menu a.active {
+      background-color: #334155;
+    }
+
+    .main {
+      margin-left: 270px;
+      padding: 40px;
+    }
+
+    .header {
+      font-size: 26px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .form-container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #475569;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .checkbox-group label {
+      background-color: #f1f5f9;
+      padding: 10px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .form-group input[type="file"] {
+      padding: 8px;
+    }
+
+    .total {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 20px;
+      color: #0f172a;
+    }
+
+    .btn-save {
+      background-color: #22c55e;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-top: 20px;
+    }
+
+    .btn-save:hover {
+      background-color: #16a34a;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>📘 La Pre del Valle</h2>
+    <nav class="menu">
+      <a href="#">🏠 Dashboard</a>
+      <a href="#">👥 Usuarios</a>
+      <a href="#">📚 Académico</a>
+      <a href="#">📖 Cursos</a>
+      <a href="#" class="active">📝 Matrículas</a>
+      <a href="#">⚙️ Cuenta</a>
+      <a href="#">🚪 Cerrar sesión</a>
+    </nav>
+  </div>
+
+  <div class="main">
+    <div class="header">Ver Matrícula</div>
+
+    <div class="form-container">
+      <div class="form-group">
+        <label>Alumno</label>
+        <input type="text" value="Juan Pérez" disabled />
+      </div>
+
+      <div class="form-group">
+        <label>Estado</label>
+        <select>
+          <option value="pending">Pendiente</option>
+          <option value="pagado" selected>Pagado</option>
+          <option value="anulado">Anulado</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Turnos</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" checked /> Mañana - S/300</label>
+          <label><input type="checkbox" checked /> Tarde - S/300</label>
+          <label><input type="checkbox" /> Noche - S/200</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Aplicar Cupón (opcional)</label>
+        <input type="text" placeholder="Código de cupón..." />
+      </div>
+
+      <div class="form-group">
+        <label>Subir Voucher</label>
+        <input type="file" />
+      </div>
+
+      <div class="total">Total: <span id="total">S/600.00</span></div>
+
+      <button class="btn-save">Guardar Cambios</button>
+    </div>
+  </div>
+
+</body>
+</html>
